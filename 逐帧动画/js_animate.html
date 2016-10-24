@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>房间</title>
+	<link rel="stylesheet" href="default/css/mindex.css">
+	<script type="text/javascript" src="default/js/jquery.min.js"></script>
+	<style type="text/css" media="screen">
+		.div{
+			position:fixed;
+			display:table;
+			width:100%;
+			height:100%;
+		}
+		.div .p{
+			display:table-cell;
+			vertical-align:middle;
+			text-align:center;
+		}
+		/*.div .p .span{
+			-webkit-animation-timing-function: steps(10,start);
+		    animation-timing-function: steps(10,start);
+
+		    -webkit-animation-duration: 1s;
+		    animation-duration: 1;
+
+		    -webkit-animation-name: m6runner;
+		    animation-name: m6runner;
+
+		    -webkit-animation-delay: 1s;
+		    animation-delay: 1s;
+
+		    animation-iteration-count: infinite;
+		    -webkit-animation-iteration-count: infinite;
+
+		    animation-direction: alternate;
+		    -webkit-animation-direction: alternate;
+		}
+		@-webkit-keyframes m6runner {
+		    0% {
+		        background-position:0 0
+		    }
+		    100% {
+		        background-position:5260px 0
+		    }
+		}
+		@keyframes m6runner {
+		    0% {
+		        background-position:0 0
+		    }
+		    100% {
+		        background-position:5260px 0
+		    }
+		}*/
+		.span{
+			/*background-image:url(../default/images/number.png);*/
+			width:526px;
+			height:755px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="div">
+		<div class="p"><div class="span"><img src="default/images/day/number1.png" alt=""></div></div>
+	</div>
+
+</body>
+</html>
+
+<script>
+	$(function(){
+		var i=0;
+		function mov(){
+			i++;
+			if(i>44){
+				return false;
+			}
+			$url = 'default/images/day/number'+i+'.png';
+			$(".span img").attr('src',$url);
+		}
+		setInterval(function(){
+			mov();
+		},80)
+	})
+</script>
