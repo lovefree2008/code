@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+.tabs{
+    display:block;
+    text-align:center;
+    ul{
+        text-align:center;
+        display:inline-block;
+        @extend %clearfix;
+        li{
+            display:block;
+            position:relative;
+           // &:hover,
+            &.oncur{
+               display:block;
+            }
+        }
+    }
+    //room 游戏大厅-我的好友
+    &.tab-tabs{
+        ul{
+            text-align:center;
+            display:inline-block;
+            @extend %clearfix;
+            li{
+                width:145px;
+                float:left;
+                a{
+                    display:block;
+                    position:relative;
+                    height:69px;
+                    font-size:14px;
+                    padding-top:7px;
+                    color:#fff;
+                    background-image:url(../images/room_tab.png);
+                    background-repeat:no-repeat;
+                    background-position:center;
+                    @include prefixer(transition,all .2s ease-out,o webkit ms moz);
+                }
+               // &:hover,
+                &.oncur{
+                    a{
+                        background-image:url(../images/room_tab_hover.png);
+                    }
+                }
+            }
+        }
+    }
+    //room 个人信息
+    &.tabs-row{
+        ul{ 
+            display:block;
+            li{
+                width:100%;
+                float:none;
+                cursor:pointer;
+                p{
+                    height:49px;
+                    line-height:49px;
+                    font-size:16px;
+                    i{
+                        margin-right:5px;
+                    }
+                }
+                &.oncur{
+                    background-color:#222938;
+                    p{
+                        color:#76ccff;
+                        .pe1{
+                            background-image:url(../images/icons/personal/pe1_hover.png);
+                        }
+                        .pe2{
+                            background-image:url(../images/icons/personal/pe2_hover.png);
+                        }
+                        .pe3{
+                            background-image:url(../images/icons/personal/pe3_hover.png);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //login 新闻公告
+    &.tabs-news{
+        ul{
+            width:100%;
+            li{
+                width:50%;
+                height:40px;
+                float:left;
+                .n-p{
+                    height:100%;
+                    color:#e1e1e1;
+                    font-size:16px;
+                    padding-top:11px;
+                    cursor:pointer;
+                    span{
+                        line-height:18px;
+                        display:block;
+                        height:18px; 
+                    }
+                    &:first-child{
+                        span{
+                            border-right:1px solid #2a3960;
+                        }
+                    }
+                }
+                &.oncur{
+                    .n-p{
+                        color:#ffbb19;
+                    }
+                }
+            }
+        }
+    }
+    //room 对战详情
+    &.tabs-rooms{
+       ul{
+            display:block;
+            li{
+                height:60px;
+                padding:5px 5px 5px 10px;
+                cursor:pointer;
+                @include prefixer(transition,all .3s ease-out,o webkit ms moz);
+                p{
+                    text-align:left;
+                    line-height:25px;
+                    span{
+                        &:last-child{
+                            float:right;
+                        }
+                    }
+                    .names{
+                        font-size:14px;
+                        color:#fff;
+                    }
+                    .score{
+                        font-size:14px;
+                        &.win{
+                            color:#3f961b;
+                        }
+                        &.loser{
+                            color:#e53651;
+                        }
+                        i{
+                            font-style:normal;
+                            font-family:arial;
+                        }
+                    }
+                    &:last-child{
+                        color:#979797;
+                        font-size:12px;
+                        span{
+                            &:last-child{
+                                font-size:14px;
+                                font-family:arial;
+                            }
+                        }
+                    }
+                }
+                &.oncur{
+                    background-color:#222938;
+                }
+            }
+       } 
+    }
+}
+
+
+.tabs-content{
+    .contents{
+        display:none;
+        height:100%;
+        &.active{
+            display:block;
+        }
+    }
+
+    .fade{
+        @include prefixer(transition,opacity .3s ease-out,o webkit ms moz);
+        opacity: 0;
+        &.in{
+           opacity: 1; 
+        }
+    }
+}
